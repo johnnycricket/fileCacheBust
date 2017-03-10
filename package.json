@@ -1,0 +1,26 @@
+{
+  "name": "file-cache-bust",
+  "version": "0.0.1",
+  "description": "A module to bust files from caching.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnycricket/fileCacheBust.git"
+  },
+  "keywords": [
+    "cache",
+    "breaking",
+    "busting",
+    "bust",
+    "filesystem"
+  ],
+  "author": "John Vorwald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnycricket/fileCacheBust/issues"
+  },
+  "homepage": "https://github.com/johnnycricket/fileCacheBust#readme"
+}
