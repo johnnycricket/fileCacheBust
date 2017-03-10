@@ -5,15 +5,19 @@ var path = require('path');
 var regexFactory = require('./lib/regexFactory.js');
 var hashGen = require('./lib/hashGenFactory.js');
 
-exports.FileCacheBust = (fileAndPath, matchArray) => {
-    
-    //parse file for matchers in matchArray, replace with new rel and hash
+exports.FileCacheBust = (file, matchArray) => {
+    var newHash = hashGen.returnHash();
+    newHash = `?rel=${hash}`;
 
-    //hash gen
-
-    //write file
-
-    //close file
-
-    //error handling
+    fs.exists(file, (exists) => {
+        if (exists) {
+            fs.readFileSync(file, 'utf-8', (error, success) => {
+                var data = success.toString();
+                for(match in matchArray){
+                    data = regexFactory.fileName(matchArray[match], data, hash);
+                };
+                fs.writeFileSync(file, data, 'utf-8');
+            });
+        }
+    })
 }
