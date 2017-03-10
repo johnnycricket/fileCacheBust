@@ -15,7 +15,9 @@
     "breaking",
     "busting",
     "bust",
-    "filesystem"
+    "filesystem",
+    "node",
+    "node.js"
   ],
   "author": "John Vorwald",
   "license": "ISC",

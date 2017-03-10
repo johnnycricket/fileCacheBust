@@ -5,9 +5,9 @@ var path = require('path');
 var regexFactory = require('./lib/regexFactory.js');
 var hashGen = require('./lib/hashGenFactory.js');
 
-exports.FileCacheBust = (file, matchArray) => {
+exports.filecachebust = (file, matchArray) => {
     var newHash = hashGen.returnHash();
-    newHash = `?rel=${hash}`;
+    newHash = `?rel=${newHash}`;
 
     fs.exists(file, (exists) => {
         if (exists) {
