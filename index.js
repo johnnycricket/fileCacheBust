@@ -5,19 +5,16 @@ var path = require('path');
 var regexFactory = require('./lib/regexFactory.js');
 var hashGen = require('./lib/hashGenFactory.js');
 
-exports.filecachebust = (file, matchArray) => {
+var fileCacheBust = function(file, matchArray) {
     var newHash = hashGen.returnHash();
-    newHash = `?rel=${newHash}`;
+    newHash = `${newHash}`;
+        
+    var data = fs.readFileSync(file, 'utf-8');
 
-    fs.exists(file, (exists) => {
-        if (exists) {
-            fs.readFileSync(file, 'utf-8', (error, success) => {
-                var data = success.toString();
-                for(match in matchArray){
-                    data = regexFactory.fileName(matchArray[match], data, hash);
-                };
-                fs.writeFileSync(file, data, 'utf-8');
-            });
-        }
-    })
-}
+    for(var match in matchArray){
+        data = regexFactory.regExFactory().fileName(matchArray[match], data, newHash);
+    };
+    fs.writeFileSync(file, data, 'utf-8');
+};
+
+module.exports.fileCacheBust = fileCacheBust;
