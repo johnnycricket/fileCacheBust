@@ -5,8 +5,8 @@ var path = require('path');
 var regexFactory = require('./lib/regexFactory.js');
 var hashGen = require('./lib/hashGenFactory.js');
 
-exports.FileCacheBust = (fileAndPath, matchArray, options) => {
-
+exports.FileCacheBust = (fileAndPath, matchArray) => {
+    
     //parse file for matchers in matchArray, replace with new rel and hash
 
     //hash gen
