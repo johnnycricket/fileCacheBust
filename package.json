@@ -1,6 +1,6 @@
 {
   "name": "file-cache-bust",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A module to bust files from caching.",
   "main": "index.js",
   "scripts": {
