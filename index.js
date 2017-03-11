@@ -1,14 +1,13 @@
 'use strict';
 
 var fs = require('fs');
-var path = require('path');
 var regexFactory = require('./lib/regexFactory.js');
 var hashGen = require('./lib/hashGenFactory.js');
 
 var fileCacheBust = function(file, matchArray) {
     var newHash = hashGen.returnHash();
     newHash = `${newHash}`;
-        
+
     var data = fs.readFileSync(file, 'utf-8');
 
     for(var match in matchArray){
