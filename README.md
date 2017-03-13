@@ -1,7 +1,8 @@
 # fileCacheBust
 I need a way to bust cache on a file name and I want to write an npm package I think?
 
-## Contents
-1. Usage
+## Installation
+1. As an npm package:
+`npm install --save-dev filecachebust`
 
-## Usage
+2. 
