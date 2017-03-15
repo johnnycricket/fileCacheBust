@@ -22,7 +22,7 @@ If you installed via npm as a dev dependancy you should be able to use the alias
 ```json
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cacheBust": "node -e \" fileCacheBust('fake.html', ['fake.js', 'fake.css']);\""
+    "cacheBust": "node -e \" var test = require('file-cache-bust'); test.fileCacheBust('fake.html', ['fake.js', 'fake.css']);\""
 },
 ```
 
