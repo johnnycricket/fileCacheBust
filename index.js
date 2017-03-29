@@ -16,5 +16,10 @@ var fileCacheBust = function(file, matchArray) {
     fs.writeFileSync(file, data, 'utf-8');
     console.info(`Finished busting cache for ${file}.`);
 };
+var batchCacheBust = function(batch) {
+    for(var item in batch){
+        fileCacheBust(batch[item].file, batch[item].matchArray);
+    }
+}
 
 module.exports.fileCacheBust = fileCacheBust;
