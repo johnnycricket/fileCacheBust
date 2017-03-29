@@ -14,7 +14,7 @@ var fileCacheBust = function(file, matchArray) {
         data = regexFactory.regExFactory().fileName(matchArray[match], data, newHash);
     };
     fs.writeFileSync(file, data, 'utf-8');
-    console.info('Finished busting caches.');
+    console.info(`Finished busting cache for ${file}.`);
 };
 
 module.exports.fileCacheBust = fileCacheBust;
